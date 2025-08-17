@@ -41,7 +41,7 @@ header p {
   text-decoration: none;
 }
 
-/* Blog Posts */
+/* Blog Posts Grid (Homepage & Articles Index) */
 .posts {
   padding: 3rem 1rem;
   max-width: 1000px;
@@ -56,22 +56,33 @@ header p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-article {
+.grid article {
   background: #fff;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-article h3 {
+.grid article h3 {
   margin-bottom: 0.5rem;
 }
-article a {
+.grid article a {
   color: #ffcc00;
   font-weight: bold;
   text-decoration: none;
 }
 
-/* Subscribe */
+/* Hover effect only on desktop screens */
+@media (min-width: 1024px) {
+  .grid article {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .grid article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+}
+
+/* Subscribe Section */
 .subscribe {
   text-align: center;
   padding: 3rem 1rem;
@@ -96,6 +107,60 @@ article a {
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
+}
+
+/* Individual Article Page Styles */
+.post-page {
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 3rem auto;
+  max-width: 800px;
+}
+.post-page h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+.post-page .post-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 2rem;
+}
+.post-page p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+.post-page h3 {
+  margin: 2rem 0 1rem;
+  font-size: 1.4rem;
+  color: #222;
+}
+.post-page ul, 
+.post-page ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+.post-page li {
+  margin-bottom: 0.7rem;
+}
+.post-page a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+}
+.post-page a:hover {
+  text-decoration: underline;
+}
+.post-page blockquote {
+  border-left: 4px solid #ffcc00;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #555;
+  font-style: italic;
+  background: #fffbea;
+  border-radius: 4px;
+  padding: 1rem;
 }
 
 /* Footer */
